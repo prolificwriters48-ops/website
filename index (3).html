@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenyan Tanzania Uganda Rwanda Dating Site — Connecting Hearts Across East Africa</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose:#c0392b; --rose-light:#e8736a; --rose-pale:#fdf0ef;
+    --gold:#c9a84c; --gold-light:#f0d080;
+    --deep:#1a0a0e; --deep2:#2d1520; --cream:#fdf8f0; --muted:#8a6a70;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--deep);overflow-x:hidden}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,10,14,.97);backdrop-filter:blur(14px);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid rgba(201,168,76,.22)}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gold);letter-spacing:.05em}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{color:rgba(255,255,255,.68);text-decoration:none;font-size:.84rem;letter-spacing:.05em;transition:color .2s}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-cta{background:linear-gradient(135deg,var(--rose),#a02019);color:white;padding:.48rem 1.4rem;border-radius:999px;font-size:.84rem;font-weight:500;text-decoration:none;letter-spacing:.04em;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(192,57,43,.45)}
+
+  /* HERO */
+  .hero{min-height:100vh;position:relative;overflow:hidden;background:var(--deep);display:flex;align-items:center;padding:80px 5vw 100px}
+  .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 75% 65% at 65% 45%,rgba(192,57,43,.26) 0%,transparent 60%),radial-gradient(ellipse 55% 70% at 5% 85%,rgba(201,168,76,.11) 0%,transparent 55%),linear-gradient(155deg,#1a0a0e 0%,#2d1520 55%,#1a0a0e 100%)}
+  .hero-pattern{position:absolute;inset:0;opacity:.035;background-image:repeating-linear-gradient(45deg,rgba(201,168,76,1) 0,rgba(201,168,76,1) 1px,transparent 0,transparent 50%);background-size:22px 22px}
+  .hero-content{position:relative;z-index:2;max-width:620px}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.32);padding:.38rem 1rem;border-radius:999px;margin-bottom:1.8rem;font-size:.75rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
+  .hero-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:blink 2s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+  .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.13;color:white;margin-bottom:1rem}
+  .grad-text{background:linear-gradient(130deg,var(--gold-light),var(--gold),var(--rose-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .hero-italic{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:rgba(255,255,255,.55);margin-bottom:.7rem}
+  .hero-desc{font-size:.93rem;color:rgba(255,255,255,.4);line-height:1.75;margin-bottom:2.4rem;max-width:490px}
+  .btn-row{display:flex;flex-wrap:wrap;gap:.9rem}
+  .btn-rose{background:linear-gradient(135deg,var(--rose),#a02019);color:white;padding:.82rem 1.9rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:.88rem;letter-spacing:.04em;transition:transform .2s,box-shadow .2s;display:inline-block;box-shadow:0 8px 28px rgba(192,57,43,.38);cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+  .btn-rose:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(192,57,43,.52)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),#9a7228);color:white;padding:.82rem 1.9rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:.88rem;letter-spacing:.04em;transition:transform .2s,box-shadow .2s;display:inline-block;box-shadow:0 8px 28px rgba(201,168,76,.3);cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(201,168,76,.46)}
+  .btn-outline{border:1.5px solid rgba(255,255,255,.28);color:rgba(255,255,255,.75);padding:.82rem 1.9rem;border-radius:999px;text-decoration:none;font-size:.88rem;letter-spacing:.04em;transition:all .2s;display:inline-block;cursor:pointer;font-family:'DM Sans',sans-serif}
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+  /* hero floating cards */
+  .hero-cards{position:absolute;right:4vw;top:50%;transform:translateY(-46%);display:grid;grid-template-columns:1fr 1fr;gap:1rem;z-index:2}
+  .hcard{width:148px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;backdrop-filter:blur(8px);transition:transform .35s;cursor:pointer}
+  .hcard:nth-child(2),.hcard:nth-child(4){margin-top:28px}
+  .hcard:hover{transform:translateY(-5px)}
+  .hcard img{width:100%;height:126px;object-fit:cover;object-position:top;display:block}
+  .hcard-info{padding:7px 9px 9px}
+  .hcard-name{font-size:.78rem;font-weight:500;color:white}
+  .hcard-loc{font-size:.68rem;color:var(--gold);margin-top:1px}
+  .hcard-v{font-size:.62rem;color:#4caf50;margin-top:2px}
+
+  /* hero stats */
+  .hero-stats{position:absolute;bottom:0;left:0;right:0;z-index:3;background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.07);backdrop-filter:blur(6px);display:flex;padding:1.2rem 5vw;gap:3rem;flex-wrap:wrap}
+  .hstat-num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold)}
+  .hstat-lbl{font-size:.72rem;color:rgba(255,255,255,.38);letter-spacing:.07em}
+
+  /* SECTIONS */
+  section{padding:80px 5vw}
+  .sec-label{font-size:.73rem;letter-spacing:.13em;text-transform:uppercase;color:var(--rose);font-weight:600;margin-bottom:.5rem}
+  .sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.2vw,2.6rem);line-height:1.2;margin-bottom:.75rem}
+  .sec-sub{font-size:.95rem;color:var(--muted);max-width:520px;line-height:1.72}
+  .tc{text-align:center}.tc .sec-sub{margin:0 auto}
+
+  /* AGE */
+  .age-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.1rem;margin-top:2.5rem}
+  .age-card{border-radius:20px;padding:1.7rem 1.3rem;cursor:pointer;transition:transform .3s,box-shadow .3s}
+  .age-card:hover{transform:translateY(-5px);box-shadow:0 18px 48px rgba(0,0,0,.1)}
+  .ac1{background:linear-gradient(150deg,#fde8e8,#fce4d0)}
+  .ac2{background:linear-gradient(150deg,#fdf0e4,#fde8d0)}
+  .ac3{background:linear-gradient(150deg,#e8f0fd,#d0e4fc)}
+  .ac4{background:linear-gradient(150deg,#e8fde8,#d0fce0)}
+  .age-range{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--deep)}
+  .age-tag{font-size:.78rem;color:var(--muted);margin:.2rem 0 .7rem}
+  .age-cnt{font-size:.83rem;font-weight:500;color:var(--rose)}
+  .age-lnk{display:inline-block;margin-top:.8rem;font-size:.78rem;color:var(--rose);border-bottom:1px solid rgba(192,57,43,.28);text-decoration:none}
+
+  /* PROFILE CARDS */
+  .tab-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2.2rem}
+  .ptab{padding:.45rem 1.3rem;border-radius:999px;border:1.5px solid rgba(192,57,43,.22);background:transparent;font-size:.82rem;cursor:pointer;color:var(--muted);transition:all .2s;font-family:'DM Sans',sans-serif}
+  .ptab.active,.ptab:hover{background:var(--rose);border-color:var(--rose);color:white}
+  .profiles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(218px,1fr));gap:1.4rem}
+  .pcard{background:white;border-radius:20px;overflow:hidden;box-shadow:0 3px 18px rgba(0,0,0,.07);transition:transform .3s,box-shadow .3s;cursor:pointer}
+  .pcard:hover{transform:translateY(-6px);box-shadow:0 16px 46px rgba(192,57,43,.13)}
+  .pcard-img{width:100%;height:236px;object-fit:cover;object-position:top;display:block}
+  .pcard-body{padding:.95rem 1.05rem}
+  .pcard-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700}
+  .pcard-meta{font-size:.78rem;color:var(--muted);margin:.18rem 0 .55rem}
+  .tag-row{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.75rem}
+  .tag{font-size:.68rem;padding:.18rem .58rem;border-radius:999px;background:var(--rose-pale);color:var(--rose);font-weight:500}
+  .tag.gt{background:#fdf6e3;color:#9a7228}
+  .tag.vt{background:#e8f5e9;color:#2e7d32}
+  .act-row{display:flex;gap:.55rem}
+  .act-btn{flex:1;padding:.48rem;border-radius:10px;border:1.5px solid transparent;font-size:.78rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;font-weight:500;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:4px}
+  .act-like{background:var(--rose-pale);color:var(--rose);border-color:rgba(192,57,43,.15)}
+  .act-like:hover{background:var(--rose);color:white}
+  .act-msg{background:#e8f5e9;color:#1b5e20;border-color:rgba(46,125,50,.2)}
+  .act-msg:hover{background:#25d366;color:white;border-color:#25d366}
+
+  /* GALLERY */
+  .gallery-section{background:var(--deep2)}
+  .gallery-section .sec-title{color:white}
+  .gallery-section .sec-label{color:var(--gold)}
+  .gallery-section .sec-sub{color:rgba(255,255,255,.45)}
+  .gallery-grid{margin-top:2.5rem;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto;gap:1rem}
+  .gitem{border-radius:16px;overflow:hidden;cursor:pointer}
+  .gitem img{width:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s}
+  .gitem:hover img{transform:scale(1.05)}
+  .gitem.tall{grid-row:span 2}
+  .g-tall{height:340px}
+  .g-short{height:162px}
+
+  /* MATCHMAKING */
+  .match-section{background:linear-gradient(135deg,var(--rose-pale),#fff5f0);text-align:center}
+  .match-feats{display:flex;flex-wrap:wrap;gap:1.3rem;justify-content:center;margin:2.8rem 0}
+  .mfeat{background:white;border-radius:16px;padding:1.4rem 1.2rem;width:190px;box-shadow:0 4px 18px rgba(192,57,43,.08);transition:transform .22s}
+  .mfeat:hover{transform:translateY(-4px)}
+  .mfeat-icon{font-size:1.9rem;margin-bottom:.7rem}
+  .mfeat-title{font-weight:600;font-size:.88rem;margin-bottom:.28rem}
+  .mfeat-text{font-size:.78rem;color:var(--muted);line-height:1.55}
+  .genuine-strip{display:inline-flex;align-items:center;gap:.55rem;background:linear-gradient(135deg,var(--rose),var(--rose-light));color:white;padding:.68rem 1.8rem;border-radius:999px;font-size:.88rem;font-weight:500;margin:.5rem .4rem}
+
+  /* SUBSCRIPTIONS */
+  .sub-section{background:#fafaf7}
+  .sub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.4rem;margin-top:3rem}
+  .scard{border-radius:22px;padding:1.9rem;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+  .scard:hover{transform:translateY(-6px);box-shadow:0 20px 56px rgba(0,0,0,.11)}
+  .scard-std{background:white;border:2px solid rgba(192,57,43,.14)}
+  .scard-prem{background:linear-gradient(155deg,var(--deep2),#3d1a25);border:2px solid rgba(201,168,76,.28);color:white}
+  .scard-lbl{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:.35rem}
+  .scard-std .scard-lbl{color:var(--rose)}
+  .scard-prem .scard-lbl{color:var(--gold)}
+  .scard-name{font-family:'Playfair Display',serif;font-size:1.55rem;margin-bottom:.45rem}
+  .scard-price{font-family:'Cormorant Garamond',serif;font-size:2.7rem;font-weight:300}
+  .scard-price sup{font-size:1rem;vertical-align:super}
+  .scard-note{font-size:.78rem;opacity:.56;margin-bottom:1.4rem}
+  .scard-feats{list-style:none;margin-bottom:1.9rem}
+  .scard-feats li{padding:.48rem 0;font-size:.86rem;display:flex;align-items:center;gap:.58rem;border-bottom:1px solid rgba(0,0,0,.045)}
+  .scard-prem .scard-feats li{border-bottom-color:rgba(255,255,255,.07)}
+  .scard-feats li::before{content:'✦';font-size:.58rem;flex-shrink:0}
+  .scard-std .scard-feats li::before{color:var(--rose)}
+  .scard-prem .scard-feats li::before{color:var(--gold)}
+  .sbtn{width:100%;padding:.82rem;border-radius:999px;border:none;cursor:pointer;font-size:.88rem;font-weight:500;font-family:'DM Sans',sans-serif;transition:all .22s;letter-spacing:.03em}
+  .scard-std .sbtn{background:var(--rose);color:white}
+  .scard-std .sbtn:hover{background:#a02019}
+  .scard-prem .sbtn{background:var(--gold);color:var(--deep)}
+  .scard-prem .sbtn:hover{background:var(--gold-light)}
+  .pop-badge{position:absolute;top:1.1rem;right:1.1rem;background:var(--gold);color:var(--deep);font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .75rem;border-radius:999px}
+  .policy-note{text-align:center;margin-top:2rem;font-size:.8rem;color:var(--muted);padding:.9rem 1.4rem;background:#fff8f8;border-radius:12px;border:1px solid rgba(192,57,43,.1)}
+
+  /* REVIEWS */
+  .rev-section{background:var(--deep)}
+  .rev-section .sec-title{color:white}
+  .rev-section .sec-label{color:var(--gold)}
+  .rev-section .sec-sub{color:rgba(255,255,255,.42)}
+  .rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:1.1rem;margin-top:2.8rem}
+  .rcard{background:rgba(255,255,255,.048);border:1px solid rgba(255,255,255,.075);border-radius:15px;padding:1.3rem;transition:background .2s}
+  .rcard:hover{background:rgba(255,255,255,.075)}
+  .rstars{color:var(--gold);font-size:.88rem;margin-bottom:.7rem}
+  .rtext{font-size:.86rem;line-height:1.72;color:rgba(255,255,255,.72);margin-bottom:.95rem;font-style:italic}
+  .rauthor{display:flex;align-items:center;gap:.7rem}
+  .ravatar{width:38px;height:38px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--rose),var(--rose-light));display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:600;color:white}
+  .rname{font-size:.83rem;font-weight:500;color:white}
+  .rloc{font-size:.72rem;color:var(--gold)}
+  .rlang{font-size:.65rem;background:rgba(201,168,76,.14);color:var(--gold);padding:2px 7px;border-radius:999px;margin-left:auto;white-space:nowrap}
+
+  /* CONTACT */
+  .contact-section{background:var(--deep2)}
+  .contact-section .sec-title{color:white}
+  .contact-section .sec-label{color:var(--gold)}
+  .contact-section .sec-sub{color:rgba(255,255,255,.42)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.8rem;align-items:start}
+  .cinfo{display:flex;flex-direction:column;gap:1rem}
+  .citem{display:flex;align-items:center;gap:.9rem;background:rgba(255,255,255,.048);padding:.95rem 1.1rem;border-radius:13px;border:1px solid rgba(255,255,255,.075);transition:background .2s;text-decoration:none;color:white;cursor:pointer}
+  .citem:hover{background:rgba(255,255,255,.088)}
+  .cicon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+  .ci-wa{background:rgba(37,211,102,.14)}
+  .ci-ph{background:rgba(201,168,76,.14)}
+  .ci-em{background:rgba(192,57,43,.14)}
+  .clbl{font-size:.72rem;color:rgba(255,255,255,.38)}
+  .cval{font-size:.93rem;font-weight:500}
+  .cform{display:flex;flex-direction:column;gap:.9rem}
+  .cform input,.cform textarea{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);color:white;padding:.78rem .95rem;border-radius:11px;font-size:.88rem;font-family:'DM Sans',sans-serif;outline:none;resize:none;transition:border-color .2s}
+  .cform input:focus,.cform textarea:focus{border-color:rgba(201,168,76,.38)}
+  .cform input::placeholder,.cform textarea::placeholder{color:rgba(255,255,255,.28)}
+  .cform textarea{height:115px}
+  .cform-btn{background:linear-gradient(135deg,var(--gold),#9a7228);color:var(--deep);border:none;padding:.88rem;border-radius:11px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .2s}
+  .cform-btn:hover{opacity:.87}
+
+  /* FOOTER */
+  footer{background:var(--deep);padding:2.2rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(201,168,76,.1)}
+  .footer-logo{font-family:'Playfair Display',serif;font-size:1rem;color:var(--gold)}
+  .footer-links{display:flex;gap:1.4rem;list-style:none}
+  .footer-links a{font-size:.78rem;color:rgba(255,255,255,.35);text-decoration:none}
+  .footer-links a:hover{color:var(--gold)}
+  .footer-copy{font-size:.75rem;color:rgba(255,255,255,.22)}
+
+  /* WHATSAPP FLOAT */
+  .wa-float{position:fixed;bottom:1.6rem;right:1.6rem;z-index:300;width:54px;height:54px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.55rem;box-shadow:0 6px 24px rgba(37,211,102,.5);transition:transform .2s}
+  .wa-float:hover{transform:scale(1.1)}
+
+  @media(max-width:900px){.hero-cards{display:none}.gallery-grid{grid-template-columns:repeat(2,1fr)}.gitem.tall{grid-row:span 1}.g-tall,.g-short{height:180px}}
+  @media(max-width:680px){.nav-links{display:none}.contact-grid{grid-template-columns:1fr}section{padding:58px 5vw}.hero{padding:80px 5vw 130px}}
+</style>
+</head>
+<body>
+
+<!-- WhatsApp floating button -->
+<a class="wa-float" href="https://wa.me/254792736675" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">✦ EastAfrica Dating</div>
+  <ul class="nav-links">
+    <li><a href="#browse">Browse</a></li>
+    <li><a href="#subscribe">Membership</a></li>
+    <li><a href="#reviews">Stories</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="https://wa.me/254792736675?text=Hello%2C%20I%20want%20to%20join%20EastAfrica%20Dating!" target="_blank">Join Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hero-dot"></span>East Africa's Premier Dating Platform</div>
+    <h1 class="hero-title">Find Your<br><span class="grad-text">Perfect Match</span><br>Across East Africa</h1>
+    <p class="hero-italic">Connecting Hearts Across Kenya, Tanzania, Uganda &amp; Rwanda</p>
+    <p class="hero-desc">Join thousands of verified singles looking for genuine love, meaningful connections, and lasting relationships — across East Africa and beyond.</p>
+    <div class="btn-row">
+      <a class="btn-rose" href="https://wa.me/254792736675?text=Hello%2C%20I%20want%20to%20join%20EastAfrica%20Dating!" target="_blank">✦ Join Now</a>
+      <a class="btn-gold" href="#browse">Browse Singles</a>
+      <a class="btn-outline" href="#subscribe">Subscribe Today</a>
+    </div>
+  </div>
+
+  <!-- All 8 images in hero cards (4 visible, rotating) -->
+  <div class="hero-cards">
+    <div class="hcard"><img src="/mnt/user-data/uploads/doc_2.jpg" alt="Grace"><div class="hcard-info"><div class="hcard-name">Grace M.</div><div class="hcard-loc">📍 Nairobi, Kenya</div><div class="hcard-v">✔ Verified</div></div></div>
+    <div class="hcard"><img src="/mnt/user-data/uploads/lec_5.jpeg" alt="Amina"><div class="hcard-info"><div class="hcard-name">Amina K.</div><div class="hcard-loc">📍 Kampala, Uganda</div><div class="hcard-v">✔ Verified</div></div></div>
+    <div class="hcard"><img src="/mnt/user-data/uploads/doc_1.jpeg" alt="James"><div class="hcard-info"><div class="hcard-name">James O.</div><div class="hcard-loc">📍 Kigali, Rwanda</div><div class="hcard-v">✔ Verified</div></div></div>
+    <div class="hcard"><img src="/mnt/user-data/uploads/lec_6.jpeg" alt="Dr John"><div class="hcard-info"><div class="hcard-name">Dr. John M.</div><div class="hcard-loc">📍 Mombasa, Kenya</div><div class="hcard-v">✔ Verified</div></div></div>
+  </div>
+
+  <div class="hero-stats">
+    <div><div class="hstat-num">12,400+</div><div class="hstat-lbl">Active Members</div></div>
+    <div><div class="hstat-num">4 Countries</div><div class="hstat-lbl">East Africa &amp; Beyond</div></div>
+    <div><div class="hstat-num">3,200+</div><div class="hstat-lbl">Successful Matches</div></div>
+    <div><div class="hstat-num">98%</div><div class="hstat-lbl">Verified Profiles</div></div>
+  </div>
+</section>
+
+<!-- AGE CATEGORIES -->
+<section style="background:#fafaf7">
+  <div class="sec-label">Find Your Match</div>
+  <h2 class="sec-title">Browse by Age Group</h2>
+  <p class="sec-sub">Every stage of life deserves love. Browse verified singles across all age groups.</p>
+  <div class="age-grid">
+    <div class="age-card ac1"><div class="age-range">18–25</div><div class="age-tag">Young &amp; Adventurous</div><div class="age-cnt">2,840 singles</div><a class="age-lnk" href="https://wa.me/254792736675?text=I%20am%20interested%20in%20singles%20aged%2018-25" target="_blank">Explore profiles →</a></div>
+    <div class="age-card ac2"><div class="age-range">25–35</div><div class="age-tag">Established &amp; Ready</div><div class="age-cnt">4,620 singles</div><a class="age-lnk" href="https://wa.me/254792736675?text=I%20am%20interested%20in%20singles%20aged%2025-35" target="_blank">Explore profiles →</a></div>
+    <div class="age-card ac3"><div class="age-range">35–45</div><div class="age-tag">Mature &amp; Intentional</div><div class="age-cnt">3,190 singles</div><a class="age-lnk" href="https://wa.me/254792736675?text=I%20am%20interested%20in%20singles%20aged%2035-45" target="_blank">Explore profiles →</a></div>
+    <div class="age-card ac4"><div class="age-range">45–60</div><div class="age-tag">Wise &amp; Experienced</div><div class="age-cnt">1,750 singles</div><a class="age-lnk" href="https://wa.me/254792736675?text=I%20am%20interested%20in%20singles%20aged%2045-60" target="_blank">Explore profiles →</a></div>
+  </div>
+</section>
+
+<!-- BROWSE SINGLES — all 8 images -->
+<section id="browse">
+  <div class="sec-label">Featured Singles</div>
+  <h2 class="sec-title">Meet Our Members</h2>
+  <p class="sec-sub">All profiles verified. Real people, genuine intentions. Click <strong>Message</strong> to connect instantly on WhatsApp.</p>
+  <div class="tab-row">
+    <button class="ptab active">All Members</button>
+    <button class="ptab">Kenya</button>
+    <button class="ptab">Tanzania</button>
+    <button class="ptab">Uganda</button>
+    <button class="ptab">Rwanda</button>
+    <button class="ptab">Professionals</button>
+    <button class="ptab">Tourists</button>
+  </div>
+  <div class="profiles-grid">
+
+    <div class="pcard">
+      <img class="pcard-img" src="/mnt/user-data/uploads/doc_2.jpg" alt="Grace M.">
+      <div class="pcard-body">
+        <div class="pcard-name">Grace M.</div>
+        <div class="pcard-meta">32 · Nairobi, Kenya</div>
+        <div class="tag-row"><span class="tag">Business Lady</span><span class="tag gt">Premium</span><span class="tag vt">✔ Verified</span></div>
+        <div class="act-row">
+          <button class="act-btn act-like" onclick="toggleLike(this)">♥ Like</button>
+          <a class="act-btn act-msg" href="https://wa.me/254792736675?text=Hi%2C%20I%20saw%20Grace%20M.%20from%20Nairobi%20on%20EastAfrica%20Dating%20and%20I%27m%20interested" target="_blank">💬 Message</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <img class="pcard-img" src="/mnt/user-data/uploads/lec_2.jpeg" alt="Miriam W.">
+      <div class="pcard-body">
+        <div class="pcard-name">Miriam W.</div>
+        <div class="pcard-meta">41 · Kigali, Rwanda</div>
+        <div class="tag-row"><span class="tag">Professional</span><span class="tag gt">VIP</span><span class="tag vt">✔ Verified</span></div>
+        <div class="act-row">
+          <button class="act-btn act-like" onclick="toggleLike(this)">♥ Like</button>
+          <a class="act-btn act-msg" href="https://wa.me/254792736675?text=Hi%2C%20I%20saw%20Miriam%20W.%20from%20Kigali%20on%20EastAfrica%20Dating%20and%20I%27m%20interested" target="_blank">💬 Message</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <img class="pcard-img" src="/mnt/user-data/uploads/lec_4.jpeg" alt="Dr. Fatima">
+      <div class="pcard-body">
+        <div class="pcard-name">Dr. Fatima</div>
+        <div class="pcard-meta">35 · Dar es Salaam, TZ</div>
+        <div class="tag-row"><span class="tag">Medical</span><span class="tag gt">Premium</span><span class="tag vt">✔ Verified</span></div>
+        <div class="act-row">
+          <button class="act-btn act-like" onclick="toggleLike(this)">♥ Like</button>
+          <a class="act-btn act-msg" href="https://wa.me/255690129224?text=Hi%2C%20I%20saw%20Dr.%20Fatima%20from%20Dar%20es%20Salaam%20on%20EastAfrica%20Dating%20and%20I%27m%20interested" target="_blank">💬 Message</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <img class="pcard-img" src="/mnt/user-data/uploads/lec_5.jpeg" alt="Amina K.">
+      <div class="pcard-body">
+        <div class="pcard-name">Amina K.</div>
+        <div class="pcard-meta">28 · Kampala, Uganda</div>
+        <div class="tag-row"><span class="tag">Entrepreneur</span><span class="tag gt">VIP</span><span class="tag vt">✔ Verified</span></div>
+        <div class="act-row">
+          <button class="act-btn act-like" onclick="toggleLike(this)">♥ Like</button>
+          <a class="act-btn act-msg" href="https://wa.me/255690129224?text=Hi%2C%20I%20saw%20Amina%20K.%20from%20Kampala%20on%20EastAfrica%20Dating%20and%20I%27m%20interested" target="_blank">💬 Message</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <img class="pcard-img" src="/mnt/user-data/uploads/doc_1.jpeg" alt="James O.">
+      <div class="pcard-body">
+        <div class="pcard-name">James O.</div>
+        <div class="pcard-meta">38 · Nairobi, Kenya</div>
+        <div class="tag-row"><span class="tag">Professional</span><span class="tag gt">Premium</span><span class="tag vt">✔ Verified</span></div>
+        <div class="act-row">
+          <button class="act-btn act-like" onclick="toggleLike(this)">♥ Like</button>
+          <a class="act-btn act-msg" href="https://wa.me/254792736675?text=Hi%2C%20I%20saw%20James%20O.%20from%20Nairobi%20on%20EastAfrica%20Dating%20and%20I%27m%20interested" target="_blank">💬 Message</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <img class="pcard-img" src="/mnt/user-data/uploads/lec_6.jpeg" alt="Dr. John M.">
+      <div class="pcard-body">
+        <div class="pcard-name">Dr. John M.</div>
+        <div class="pcard-meta">33 · Mombasa, Kenya</div>
+        <div class="tag-row"><span class="tag">Medical</span><span class="tag gt">VIP</span><span class="tag vt">✔ Verified</span></div>
+        <div class="act-row">
+          <button class="act-btn act-like" onclick="toggleLike(this)">♥ Like</button>
+          <a class="act-btn act-msg" href="https://wa.me/254792736675?text=Hi%2C%20I%20saw%20Dr.%20John%20M.%20from%20Mombasa%20on%20EastAfrica%20Dating%20and%20I%27m%20interested" target="_blank">💬 Message</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <img class="pcard-img" src="/mnt/user-data/uploads/lec_1.jpeg" alt="Prof. David">
+      <div class="pcard-body">
+        <div class="pcard-name">Prof. David</div>
+        <div class="pcard-meta">52 · Entebbe, Uganda</div>
+        <div class="tag-row"><span class="tag">Academic</span><span class="tag vt">✔ Verified</span></div>
+        <div class="act-row">
+          <button class="act-btn act-like" onclick="toggleLike(this)">♥ Like</button>
+          <a class="act-btn act-msg" href="https://wa.me/255690129224?text=Hi%2C%20I%20saw%20Prof.%20David%20from%20Entebbe%20on%20EastAfrica%20Dating%20and%20I%27m%20interested" target="_blank">💬 Message</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <img class="pcard-img" src="/mnt/user-data/uploads/doc_3.jpeg" alt="Sandra N.">
+      <div class="pcard-body">
+        <div class="pcard-name">Sandra N.</div>
+        <div class="pcard-meta">26 · Arusha, Tanzania</div>
+        <div class="tag-row"><span class="tag">Tourist</span><span class="tag gt">Active</span><span class="tag vt">✔ Verified</span></div>
+        <div class="act-row">
+          <button class="act-btn act-like" onclick="toggleLike(this)">♥ Like</button>
+          <a class="act-btn act-msg" href="https://wa.me/255690129224?text=Hi%2C%20I%20saw%20Sandra%20N.%20from%20Arusha%20on%20EastAfrica%20Dating%20and%20I%27m%20interested" target="_blank">💬 Message</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY — all 8 images -->
+<section class="gallery-section">
+  <div class="sec-label">Our Community</div>
+  <h2 class="sec-title">Photo Gallery</h2>
+  <p class="sec-sub">Real members, authentic connections — professional, elegant, and genuinely East African.</p>
+  <div class="gallery-grid">
+    <div class="gitem tall"><img class="g-tall" src="/mnt/user-data/uploads/doc_2.jpg" alt="Grace M."></div>
+    <div class="gitem"><img class="g-short" src="/mnt/user-data/uploads/lec_4.jpeg" alt="Dr. Fatima"></div>
+    <div class="gitem"><img class="g-short" src="/mnt/user-data/uploads/lec_5.jpeg" alt="Amina K."></div>
+    <div class="gitem tall"><img class="g-tall" src="/mnt/user-data/uploads/lec_6.jpeg" alt="Dr. John"></div>
+    <div class="gitem"><img class="g-short" src="/mnt/user-data/uploads/lec_2.jpeg" alt="Miriam W."></div>
+    <div class="gitem"><img class="g-short" src="/mnt/user-data/uploads/doc_1.jpeg" alt="James O."></div>
+    <div class="gitem"><img class="g-short" src="/mnt/user-data/uploads/lec_1.jpeg" alt="Prof. David"></div>
+    <div class="gitem"><img class="g-short" src="/mnt/user-data/uploads/doc_3.jpeg" alt="Sandra N."></div>
+  </div>
+  <div style="text-align:center;margin-top:2.5rem">
+    <a class="btn-gold" href="https://wa.me/254792736675?text=I%20want%20to%20browse%20more%20profiles%20on%20EastAfrica%20Dating" target="_blank">View All Profiles →</a>
+  </div>
+</section>
+
+<!-- MATCHMAKING -->
+<section class="match-section">
+  <div class="sec-label tc">Why Choose Us</div>
+  <h2 class="sec-title tc">Genuine Matchmaking</h2>
+  <p class="sec-sub tc">Built for serious-minded singles seeking authentic, lasting love across East Africa.</p>
+  <div class="match-feats">
+    <div class="mfeat"><div class="mfeat-icon">💎</div><div class="mfeat-title">Verified Profiles</div><div class="mfeat-text">Manual identity verification for every member</div></div>
+    <div class="mfeat"><div class="mfeat-icon">💬</div><div class="mfeat-title">WhatsApp Connect</div><div class="mfeat-text">Instant private connection via WhatsApp</div></div>
+    <div class="mfeat"><div class="mfeat-icon">❤️</div><div class="mfeat-title">Real Connections</div><div class="mfeat-text">Serious relationships &amp; genuine hookups</div></div>
+    <div class="mfeat"><div class="mfeat-icon">🌍</div><div class="mfeat-title">International</div><div class="mfeat-text">Connect across East Africa &amp; worldwide</div></div>
+    <div class="mfeat"><div class="mfeat-icon">🛡️</div><div class="mfeat-title">Safe &amp; Private</div><div class="mfeat-text">Your data is always protected</div></div>
+  </div>
+  <div>
+    <span class="genuine-strip">✦ Genuine Hookup Available</span>
+    <span class="genuine-strip">✔ Real People — Real Connections</span>
+  </div>
+  <div style="margin-top:2rem">
+    <a class="btn-rose" href="https://wa.me/254792736675?text=I%20want%20to%20find%20a%20genuine%20match%20on%20EastAfrica%20Dating" target="_blank">Find My Match on WhatsApp</a>
+  </div>
+</section>
+
+<!-- SUBSCRIPTIONS -->
+<section id="subscribe" class="sub-section">
+  <div class="sec-label tc">Membership Plans</div>
+  <h2 class="sec-title tc">Choose Your Plan</h2>
+  <p class="sec-sub tc">Unlock your full potential for love. All plans include WhatsApp direct matchmaking support.</p>
+  <div class="sub-grid">
+
+    <div class="scard scard-std">
+      <div class="scard-lbl">Standard — Male</div>
+      <div class="scard-name">Standard</div>
+      <div class="scard-price"><sup>$</sup>10</div>
+      <div class="scard-note">per month</div>
+      <ul class="scard-feats">
+        <li>Browse all verified profiles</li>
+        <li>Up to 20 messages/month</li>
+        <li>Basic profile badge</li>
+        <li>All age categories</li>
+        <li>Search &amp; filter tools</li>
+        <li>WhatsApp support access</li>
+      </ul>
+      <button class="sbtn" onclick="window.open('https://wa.me/254792736675?text=I%20want%20to%20subscribe%20to%20the%20Standard%20Male%20plan%20%2410%2Fmonth%20on%20EastAfrica%20Dating','_blank')">Subscribe via WhatsApp</button>
+    </div>
+
+    <div class="scard scard-std">
+      <div class="scard-lbl">Standard — Female</div>
+      <div class="scard-name">Standard</div>
+      <div class="scard-price"><sup>$</sup>10</div>
+      <div class="scard-note">per month</div>
+      <ul class="scard-feats">
+        <li>Browse all verified profiles</li>
+        <li>Up to 20 messages/month</li>
+        <li>Basic profile badge</li>
+        <li>All age categories</li>
+        <li>Search &amp; filter tools</li>
+        <li>WhatsApp support access</li>
+      </ul>
+      <button class="sbtn" onclick="window.open('https://wa.me/254792736675?text=I%20want%20to%20subscribe%20to%20the%20Standard%20Female%20plan%20%2410%2Fmonth%20on%20EastAfrica%20Dating','_blank')">Subscribe via WhatsApp</button>
+    </div>
+
+    <div class="scard scard-prem">
+      <div class="pop-badge">Most Popular</div>
+      <div class="scard-lbl">Business Ladies · Professionals · Entrepreneurs · Tourists</div>
+      <div class="scard-name">Premium VIP</div>
+      <div class="scard-price"><sup>$</sup>15</div>
+      <div class="scard-note">per month</div>
+      <ul class="scard-feats">
+        <li>Priority matchmaking &amp; placement</li>
+        <li>Verified ✦ profile badge</li>
+        <li>Unlimited messaging</li>
+        <li>VIP visibility — appear at the top</li>
+        <li>Exclusive matchmaking features</li>
+        <li>24/7 concierge WhatsApp support</li>
+        <li>International profile boosting</li>
+        <li>Profile optimisation service</li>
+      </ul>
+      <button class="sbtn" onclick="window.open('https://wa.me/254792736675?text=I%20want%20to%20subscribe%20to%20the%20Premium%20VIP%20plan%20%2415%2Fmonth%20on%20EastAfrica%20Dating','_blank')">Unlock Premium via WhatsApp</button>
+    </div>
+
+  </div>
+  <div class="policy-note">⚠️ <strong>Payment Policy:</strong> All payments are strictly non-refundable. By subscribing you agree to our Terms of Service.</div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="rev-section">
+  <div class="sec-label tc">Success Stories</div>
+  <h2 class="sec-title tc">Verified Reviews</h2>
+  <p class="sec-sub tc">Real stories — in English, Swahili &amp; Kinyarwanda — from people who found love on our platform.</p>
+  <div class="rev-grid">
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"I never believed I would find someone so genuine online. Within two months I met my partner from Tanzania — we are now planning our wedding. This platform changed my life completely."</div><div class="rauthor"><div class="ravatar">AM</div><div><div class="rname">Abigail M.</div><div class="rloc">Nairobi, Kenya</div></div><span class="rlang">EN</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"As a professional businesswoman I was skeptical. The verification process gave me total confidence. I met a wonderful entrepreneur from Uganda who understands my world completely."</div><div class="rauthor"><div class="ravatar">RF</div><div><div class="rname">Rachel F.</div><div class="rloc">Dar es Salaam, Tanzania</div></div><span class="rlang">EN</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"The premium matchmaking is worth every cent. Within weeks I was connected with verified, serious-minded singles. I am now in a loving relationship. Highly recommend to everyone!"</div><div class="rauthor"><div class="ravatar">JK</div><div><div class="rname">James K.</div><div class="rloc">Kampala, Uganda</div></div><span class="rlang">EN</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"I was visiting Nairobi as a tourist and joined this site. The people I met were genuine, warm, and welcoming. I found love unexpectedly — she is from Rwanda and we could not be happier."</div><div class="rauthor"><div class="ravatar">TH</div><div><div class="rname">Thomas H.</div><div class="rloc">London, UK</div></div><span class="rlang">EN</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"The verified badge system makes all the difference. I felt safe knowing every profile was authenticated. Found my soulmate in just six weeks. This is the future of East African dating."</div><div class="rauthor"><div class="ravatar">EW</div><div><div class="rname">Esther W.</div><div class="rloc">Kigali, Rwanda</div></div><span class="rlang">EN</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"Sikuwahi kufikiria nitapata mpenzi wa kweli mtandaoni. Lakini kupitia tovuti hii nilipata mtu wa roho yangu kutoka Kenya. Tunafurahi sana pamoja. Asanteni sana!"</div><div class="rauthor"><div class="ravatar">ZA</div><div><div class="rname">Zainab A.</div><div class="rloc">Mombasa, Kenya</div></div><span class="rlang">SW</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"Nilianza kwa mashaka lakini huduma ya Premium ilinisaidia sana. Nilikutana na mtu mzuri wa biashara kutoka Uganda. Leo tuna ndoa nzuri. Ninapendekeza tovuti hii kwa mioyo yote!"</div><div class="rauthor"><div class="ravatar">MN</div><div><div class="rname">Mary N.</div><div class="rloc">Arusha, Tanzania</div></div><span class="rlang">SW</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"Kama mtaalamu wa afya, nilikuwa nahitaji mtu mwenye uelewa. Nilikutana na daktari mzuri kutoka Rwanda. Maisha yetu ya upendo ni baraka kubwa. Asante kwa huduma bora!"</div><div class="rauthor"><div class="ravatar">PO</div><div><div class="rname">Peter O.</div><div class="rloc">Kampala, Uganda</div></div><span class="rlang">SW</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"Tovuti hii ni ya kweli kabisa. Wasifu wote ni halisi na watu ni wa kweli. Nilifurahi kukutana na mtu kutoka Tanzania ambaye anaelewa utamaduni wetu. Tunaendelea vizuri sana."</div><div class="rauthor"><div class="ravatar">FK</div><div><div class="rname">Fatima K.</div><div class="rloc">Nairobi, Kenya</div></div><span class="rlang">SW</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"Nari ntekereza ko gushaka urukundo kuri internet ari ikintu kitagira umumaro. Ariko uyu murongo wampaye umugabo mwiza w'i Kenya. Ubu turi hamwe, tunezerwa cyane. Murakoze cyane!"</div><div class="rauthor"><div class="ravatar">CB</div><div><div class="rname">Claire B.</div><div class="rloc">Kigali, Rwanda</div></div><span class="rlang">RW</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"Serivisi ya Premium yansenye inzira yo guturana n'umukobwa w'isoko rya Tanzania. Twahuye, twakundana, none tuzashyingirwa mu mwaka uzaza. Ese imirimo y'urukundo ni y'ukuri!"</div><div class="rauthor"><div class="ravatar">IM</div><div><div class="rname">Innocent M.</div><div class="rloc">Butare, Rwanda</div></div><span class="rlang">RW</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"Nibashije kubona umugabo w'ingenzi, injeniya avuye i Kampala, akoresheje uyu murongo. Uruhurirane rwe rwaranteye kwizera cyane. Ubu turi mu nzira y'urukundo rw'ukuri!"</div><div class="rauthor"><div class="ravatar">AP</div><div><div class="rname">Ange P.</div><div class="rloc">Musanze, Rwanda</div></div><span class="rlang">RW</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"As an entrepreneur, finding time to date is hard. This platform's priority matchmaking found me compatible matches instantly. Absolutely worth every penny. Found love in just 3 weeks!"</div><div class="rauthor"><div class="ravatar">DN</div><div><div class="rname">David N.</div><div class="rloc">Nairobi, Kenya</div></div><span class="rlang">EN</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"I am a Ugandan business lady and this platform truly understands our needs. The premium tier gave me visibility to serious, educated, ambitious men. I found my perfect partner from Rwanda."</div><div class="rauthor"><div class="ravatar">SO</div><div><div class="rname">Sharon O.</div><div class="rloc">Entebbe, Uganda</div></div><span class="rlang">EN</span></div></div>
+    <div class="rcard"><div class="rstars">★★★★★</div><div class="rtext">"International dating done right. I connected with a wonderful Kenyan lady while on a business visit to Nairobi. The platform made the process safe, natural, and incredibly romantic. 10/10."</div><div class="rauthor"><div class="ravatar">MR</div><div><div class="rname">Michael R.</div><div class="rloc">Dubai, UAE</div></div><span class="rlang">EN</span></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="sec-label">Get In Touch</div>
+  <h2 class="sec-title">Contact Us</h2>
+  <p class="sec-sub">Have questions? Our matchmaking team is available on WhatsApp, phone, and email — any time.</p>
+  <div class="contact-grid">
+    <div class="cinfo">
+      <a class="citem" href="https://wa.me/254792736675?text=Hello%2C%20I%20need%20help%20with%20EastAfrica%20Dating" target="_blank"><div class="cicon ci-wa">📱</div><div><div class="clbl">WhatsApp — Kenya</div><div class="cval">+254 792 736 675</div></div></a>
+      <a class="citem" href="https://wa.me/255690129224?text=Hello%2C%20I%20need%20help%20with%20EastAfrica%20Dating" target="_blank"><div class="cicon ci-wa">📱</div><div><div class="clbl">WhatsApp — Tanzania</div><div class="cval">+255 690 129 224</div></div></a>
+      <a class="citem" href="tel:+254792736675"><div class="cicon ci-ph">📞</div><div><div class="clbl">Phone — Kenya</div><div class="cval">+254 792 736 675</div></div></a>
+      <a class="citem" href="tel:+255690129224"><div class="cicon ci-ph">📞</div><div><div class="clbl">Phone — Tanzania</div><div class="cval">+255 690 129 224</div></div></a>
+      <a class="citem" href="mailto:prolificwriters@gmail.com"><div class="cicon ci-em">✉️</div><div><div class="clbl">Email Us</div><div class="cval">prolificwriters@gmail.com</div></div></a>
+    </div>
+    <div class="cform">
+      <input type="text" placeholder="Your Full Name">
+      <input type="email" placeholder="Your Email Address">
+      <input type="text" placeholder="Your Country">
+      <input type="text" placeholder="Your WhatsApp Number">
+      <textarea placeholder="Tell us about yourself and what you are looking for…"></textarea>
+      <button class="cform-btn" onclick="window.open('https://wa.me/254792736675?text=Hello%2C%20I%20filled%20out%20the%20contact%20form%20on%20EastAfrica%20Dating%20and%20I%27m%20interested%20in%20joining','_blank')">Send Message via WhatsApp ✦</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">✦ EastAfrica Dating</div>
+  <ul class="footer-links">
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms of Service</a></li>
+    <li><a href="#">Safety Tips</a></li>
+    <li><a href="#">Help Centre</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Kenyan Tanzania Uganda Rwanda Dating Site. All rights reserved.</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.ptab').forEach(t=>{
+    t.addEventListener('click',()=>{
+      document.querySelectorAll('.ptab').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+    });
+  });
+  function toggleLike(btn){
+    const liked=btn.dataset.liked==='1';
+    btn.dataset.liked=liked?'0':'1';
+    btn.textContent=liked?'♥ Like':'♥ Liked';
+    btn.style.background=liked?'':'var(--rose)';
+    btn.style.color=liked?'':'white';
+  }
+</script>
+</body>
+</html>
